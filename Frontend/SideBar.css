@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-logo a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    border: none;
+    float: left;
+    margin-left: 15px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main-p3 {
+    margin-left: 70px; /* Ajuste la marge gauche pour compenser la largeur du sidebar */
+    width: calc(100% - 70px); /* Utilise calc pour soustraire la largeur du sidebar de 100% */
+    overflow-y: auto;
+    transition: all 0.35s ease-in-out;
+    background-color: #d8e1fb4f;
+    height: 100vh;
+}
+
+#sidebar {
+    position: fixed;
+    height: 100vh;
+    min-height: 100vh;
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    background-color: #424769/*#0e223e*/;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+#sidebar.expand + .main-p3 {
+    margin-left: 260px; /* Ajustez la marge gauche lorsque le sidebar est en expansion */
+    width: calc(100% - 260px);
+    transition: all 0.35s ease-in-out;
+}
+
+#toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+#toggle-btn i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #fff;
+    font-size: 1.15em;
+    font-weight: 600;
+    transition-delay: 2sx;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #fff;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+    text-decoration: none;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #3b7ddd;
+}
+
+
+/*----------------------------------Menu Employé------------------------------------------------------*/
+.liste {
+    width: 25%;
+    margin-left: 2%;
+}
+
+table, th, td {
+    padding: 1rem;
+}
+
+table {
+    background-color: rgba(128, 128, 128, 0.05);
+    
+}
+ 
+#myTable {
+    margin: auto;
+    width: 97%;
+    margin-top: 25px;
+}
+
+
+th {
+    background-color: #d5d1defe;
+}
+
+tbody tr:hover, tr:nth-child(even):hover{
+    background-color: rgba(128, 128, 128, 0.116);
+}
+
+th:first-child {
+    border-top-left-radius: 13px; /* Coin supérieur gauche */
+}
+
+th:last-child {
+    border-top-right-radius: 13px; /* Coin supérieur droit */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #00000007;
+}
+
+.action {
+    display: flex;
+    visibility: hidden;
+}
+
+.action div {
+    margin-right: 0px;
+}
+
+.edit {
+    /* margin-top: -4px;
+    padding: 5px;
+    border-radius: 50%; */
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding-top: 1px;
+    cursor: pointer;
+}
+
+#edit {
+    color: rgb(36, 36, 48);
+}
+
+.trash {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding-top: 6px;
+}
+
+#trash {
+    color: #ff0000;
+}
+
+tr:hover {
+    .action {
+        visibility: visible;
+    }
+}
+
+.edit:hover, .trash:hover {
+    background-color: #fff;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.enregistrement {
+    width: 45%;
+    padding: 10px;
+    background-color: #fef9e6;
+    border-radius: 23px;
+    color: black;
+    
+}
+
+.enregistrement h1 {
+    font-size: 25px;
+}
+
+.titre {
+    margin-bottom: 70px;
+}
+
+#recherche {
+    margin-top: 15px;
+    border-radius: 13px;
+    padding-left: 10px;
+    padding-right: 32px;
+    background-clip: padding-box;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    width: 300px;
+    height: 30x;
+}
+
+.rechercher {
+    position: relative;
+    float: right;
+    margin-right: 20px;
+}
+
+.liste {
+    border: 1px black solid;
+    height: 25px;
+    transform: translateY(-190%);
+}
+
+#search {
+    position: absolute;
+    right: 10px; /* Ajustement de la position de l'icône */
+    top: 68%;
+    transform: translateY(-50%);
+    color: #666; /* Couleur de l'icône */
+}
+
+/*------------------------------------Lieu-----------------------------------------------------*/
+
+#lieuTable {
+    width: 50%;
+    box-shadow: 0px 8px 16px 0px rgba(51, 50, 50, 0.1);
+    /* margin-left: 150px; */
+    /* overflow: auto; */
+    /* background-color: #3b7ddd; */
+} 
+
+.contenu {
+    display: flex;
+}
+
+.interieur {
+    display: flex;
+    width: 85%;
+    margin: auto;
+    padding: 50px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+}
+
+.header {
+    margin-bottom: 7%;
+}
+
+.lieuForm {
+    /* border: 1px black solid; */
+    margin-left: 8%;
+    margin-right: 132px; 
+    background-color: #fff;
+    width: 30%;
+    border-top-left-radius: 18px; 
+    border-top-right-radius: 18px; 
+}
+
+.lieuForm label {
+    color: #570e45; 
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.lieuForm input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    width: 98%;
+    padding-bottom: 5px;
+    margin-left: 5px;
+}
+
+.lieuForm #id {
+    width: 50%;
+    margin-left: 15px;
+    font-weight: bold;
+    border: none;
+}
+
+.bouton {
+   text-align: center;
+}
+
+.bouton button {
+    width: 117px;
+    padding: 5px;
+    border-radius: 25px;
+    border: none;
+    background-color: #570e45;
+    color: #fff;
+    font-weight: bold;
+}
+
+.bouton button:disabled {
+    background-color: #4d3446;
+}
+
+.bouton button:not(:disabled):hover {
+    background-color: #3d022e;
+}
+
+.lieuTable {
+    height: 380px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.title {
+    font-size: 17px;
+    margin-top: 3px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #0b2048;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top-left-radius: 18px; 
+    border-top-right-radius: 18px; 
+}
+
+.lieuTable .editor {
+    transform: translateX(9px);
+}
+
+.lieuTable #trash {
+    transform: translateX(9px);
+}
+
+
+/*------------------------------------Affectation-----------------------------------------------------*/
+.titreAffect {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    color: #2d3a52;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    min-height: calc(100vh - 100px);
+}
+
+.affectation {
+    width: 50%;
+    height: 550px;
+    padding-left: 25px;
+    background-color: rgba(1, 1, 22, 0.05);
+    border-radius: 35px;
+    box-shadow: 0px 8px 16px 0px rgba(51, 50, 50, 0.1);;
+}
+
+.a {
+    display:flex;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.b {
+    display: flex;
+}
+
+.affectation label {
+    font-weight: bold;
+    color: brown;
+}
+
+#nomAffect, #affectNum, #nomAffect, #prenomAffect, #ancienLieu, #nouveauLieu {
+    width: 250px;
+}
+
+#num {
+    width: 100px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #2d3a52;
+    font-weight: bold;
+}
+
+#dateAffect1 {
+    margin-right: 10px;
+}
+
+.gauche {
+    margin-right: 10px;
+}
+
+
+.btnAffect {
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#affectBtn {
+    background-color: #424769;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 23px;
+}
+
+/*------------------------------------Historique-----------------------------------------------------*/
+#historicTable {
+    margin: auto;
+    width: 97%;
+}
+
+#historicTable th,
+    #historicTable td {
+        text-align: center;
+    }
+
+#dateSetting {
+    margin-bottom: 20px;
+    margin-left: 2%;
+}
+
+#dateSetting form {
+    display: flex;
+}
+
+#dateSetting div {
+    margin-right: 10px;
+}
+
+
+#historicTitle {
+    margin-bottom: 60px;
+}
+
+.reload i {
+    width: 50px;
+}
